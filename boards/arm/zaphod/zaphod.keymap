@@ -72,7 +72,7 @@
         VIM_layer {
             label = "Vim";
             bindings = <
-             &kp LBRC  &kp RBRC &kp RC(RS(PSCRN)) &kp PSCRN &kp GRAVE  &kp RC(RS(LEFT)) &kp RC(RS(DOWN)) &kp RC(RS(UP)) &kp (RC(RS(RIGHT)) &kp ESC
+             &kp LBRC  &kp RBRC &kp RC(RS(PSCRN)) &kp PSCRN &kp GRAVE  &kp RC(RS(LEFT)) &kp RC(RS(DOWN)) &kp RC(RS(UP)) &kp RC(RS(RIGHT)) &kp ESC
           &hm LCTRL EQUAL &kp PLUS  &kp BSLH   &kp PIPE       &kp TILDE   &kp LEFT        &kp DOWN      &kp UP      &kp RIGHT   &hm RCTRL ENTER
           &hm LSHFT LBKT  &kp RBKT &kp RC(RS(C)) &kp RC(RS(V)) &none      &kp HOME        &kp PG_DN     &kp PG_UP   &kp END     &hm RSHFT DEL   
                                                &kp TAB         &trans     &kp SPACE       &kp BKSP
