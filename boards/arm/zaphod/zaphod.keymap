@@ -12,9 +12,7 @@
 #define NUM_L 1
 #define VIM_L 2
 #define I3L_L 3
-#define SYM_L 4
-#define MED_L 5
-#define FUN_L 6
+#define BLU_L 4
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -57,69 +55,50 @@
                 &kp Q       &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I       &kp O      &kp P
                 &hm LCTRL A &kp S      &kp D       &kp F          &kp G         &kp H            &kp J          &kp K       &kp L      &hm RCTRL QUOT
                 &hm LSHFT Z &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &kp COMMA   &kp DOT    &hm RSHFT FSLH
-                                                  &lt NAV_L TAB  &lt VIM_L RET &lt NUM_L SPACE  &lt SYM_L BKSP
+                                                  &lt I3L_L TAB  &lt VIM_L RET &lt NUM_L SPACE  &lt BLU_L BKSP
             >;
         };
 
-        nav_layer {
+        NUM_layer {
             label = "Num";
             bindings = <
-                &EXCL     &AT       &POUND     &DLLR          &PRCNT      &CARET          &AMPS         &ASTRK     &LPAR     &RPAR
+                &kp EXCL  &kp AT    &kp POUND  &kp DLLR       &kp PRCNT   &kp CARET       &kp AMPS      &kp ASTRK  &kp LPAR  &kp RPAR
                 &kp N1    &kp N2    &kp N3     &kp N4         &kp N5      &kp N6          &kp N7        &kp N8     &kp N9    &kp N0 
-                &none     &none     &none      &none          &none       &none           &kp none      &kp none   &kp none  &kp none
-                                               &kp TAB        &DOT	  &trans          &kp BKSP
+                &kp LGUI  &kp LALT  &kp SQT    &kp MINUS      &none       &none           &kp DOT       &kp COMMA  &kp DOT   &kp FSLH
+                                               &kp BKSP       &kp DOT	  &trans          &kp BKSP
             >;
         };
 
-        other_layer {
+        VIM_layer {
             label = "Vim";
             bindings = <
-                &none	  &none     &none      &none          &none       &none           &none         &none       &none       &ESC
-                &none     &none     &none      &none          &none       &kp LEFT        &kp DOWN      &kp UP      &kp RIGHT   &none
-                &none     &none     &none      &none          &none       &kp HOME        &kp PG_DN     &kp PG_UP   &kp END     &none   
-                                               &trans         &trans      &trans          &trans
+             &kp LBRC  &kp RBRC &kp RC(RS(PSCRN)) &kp PSCRN &kp GRAVE  &kp RC(RS(LEFT)) &kp RC(RS(DOWN)) &kp RC(RS(UP)) &kp (RC(RS(RIGHT)) &kp ESC
+          &hm LCTRL EQUAL &kp PLUS  &kp BSLH   &kp PIPE       &kp TILDE   &kp LEFT        &kp DOWN      &kp UP      &kp RIGHT   &hm RCTRL ENTER
+          &hm LSHFT LBKT  &kp RBKT &kp RC(RS(C)) &kp RC(RS(V)) &none      &kp HOME        &kp PG_DN     &kp PG_UP   &kp END     &hm RSHFT DEL   
+                                               &kp TAB         &trans     &kp SPACE       &kp BKSP
             >;
         };
 
         I3L_layer {
-            label = "I3L";
+            label = "I3l";
             bindings = <
-                &none     &none     &none     &none          &none        &none          &none         &none      &none     &none
-                &none     &none     &none     &none          &none        &none          &none         &none      &none     &none
-                &none     &none     &none     &none          &none        &none          &none         &none      &none     &none
-                                                  &trans          &trans     &trans          &trans
+            &kp LS(LA(Q)) &none     &kp LA(D) &none          &none        &none          &none         &kp LA(RET) &none     &kp DEL
+               &kp LA(N1) &kp LA(N2) &kp LA(N3) &kp LA(N4)   &kp LA(N5)   &kp LA(N6)     &kp LA(N7)    &kp LA(N8) &kp LA(N9) &kp LA(N0)
+               &kp LSHFT  &kp LA(R) &none     &kp LA(V)      &kp LA(H)    &kp LA(J)      &kp LA(K)     &kp LA(L)  &kp LA(SEMI) &kp RSHFT
+                                              &trans         &kp RET      &kp LA(SPACE)  &kp BKSP
             >;
         };
 
-        sym_layer {
-            label = "Sym";
+        BLU_layer {
+            label = "Blu";
             bindings = <
-                &kp LBRC     &kp LS(N7)  &kp LS(N8)  &kp LS(N9) &kp RBRC        &none &none   &none    &none    &none
-                &kp COLON    &kp LS(N4)  &kp LS(N5)  &kp LS(N6) &kp PLUS        &none &none   &none    &none    &none
-                &kp TILDE    &kp LS(N1)  &kp LS(N2)  &kp LS(N3) &kp LS(BSLH)    &none &none   &none    &none    &none
-                                                   &kp LS(N0) &kp UNDER         &trans &trans
+           &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none     &none     &none     &none     &bootloader
+           &kp ESC      &kp SEMI     &kp W        &kp Q        &kp EXCL     &none     &none     &none     &none     &kp RET
+           &none        &none        &bt BT_CLR   &none        &none        &none     &none     &none     &none     &none
+                                                  &none        &none        &none     &trans
             >;
         };
 
-        media_layer {
-            label = "Media";
-            bindings = <
-                &none	   &none     &none      &none          &none       &none           &none         &none       &none       &none
-                &none     &none     &none      &none          &none       &none           &kp C_PREV     &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
-                &none     &none     &none      &none          &none       &none           &none         &none       &none       &none
-                                                  &trans          &trans       &kp C_STOP       &kp C_PLAY_PAUSE
-            >;
-        };
-
-        fun_layer {
-            label = "Fun";
-            bindings = <
-                &kp F12     &kp F7     &kp F8      &kp F9     &kp PSCRN         &none          &none         &none      &none     &none
-                &kp F11     &kp F4     &kp F5      &kp F6     &kp SLCK          &none          &none         &none      &none     &none
-                &kp F10     &kp F1     &kp F2      &kp F3     &kp PAUSE_BREAK   &none          &none         &none      &none     &none
-                                                   &trans      &trans             &trans          &trans
-            >;
-        };
     };
 };
 
