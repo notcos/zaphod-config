@@ -45,6 +45,14 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+            
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt BLU_L BKSP>, <&kp BKSP>;
+        };
     };
 
     keymap {
@@ -56,7 +64,7 @@
                 &kp Q       &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I       &kp O      &kp P
                 &hm LCTRL A &hm LSHFT S &hm LCTRL D &hm LALT F    &kp G         &kp H            &hm LALT J   &hm LCTRL K   &hm LSFT L &hm RCTRL QUOT
                 &hm LSHFT Z &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &kp COMMA   &kp DOT    &hm RSHFT FSLH
-                                                  &lt I3L_L TAB  &lt VIM_L RET &lt NUM_L SPACE  &lt BLU_L BKSP
+                                                   &lt I3L_L TAB  &lt VIM_L RET &lt NUM_L SPACE  &td0
             >;
         };
 
@@ -73,9 +81,9 @@
         VIM_layer {
             label = "Vim";
             bindings = <
-             &kp LBRC  &kp RBRC &kp RC(RS(PSCRN)) &kp PSCRN &kp GRAVE  &kp RC(RS(LEFT)) &kp RC(RS(DOWN)) &kp RC(RS(UP)) &kp RC(RS(RIGHT)) &kp ESC
-          &hm LCTRL EQUAL &kp PLUS  &kp BSLH   &kp PIPE       &kp TILDE   &kp LEFT        &kp DOWN      &kp UP      &kp RIGHT   &hm RCTRL ENTER
-          &hm LSHFT LBKT  &kp RBKT &kp RC(RS(C)) &kp RC(RS(V)) &none      &kp HOME        &kp PG_DN     &kp PG_UP   &kp END     &hm RSHFT DEL   
+  &kp LBRC      &kp RBRC       &kp RC(RS(PSCRN)) &kp PSCRN     &kp GRAVE  &kp RC(RS(LEFT)) &kp RC(RS(DOWN)) &kp RC(RS(UP)) &kp RC(RS(RIGHT)) &kp ESC
+&hm LCTRL EQUAL &hm LSHFT PLUS &hm LCTRL BSLH    &hm LALT PIPE &kp TILDE  &kp LEFT        &kp DOWN      &kp UP           &kp RIGHT       &hm RCTRL ENTER     
+&hm LSHFT LBKT  &kp RBKT       &kp RC(RS(C))     &kp RC(RS(V)) &none      &kp HOME        &kp PG_DN     &kp PG_UP        &kp END         &hm RSHFT DEL   
                                                &kp TAB         &trans     &kp SPACE       &kp BKSP
             >;
         };
