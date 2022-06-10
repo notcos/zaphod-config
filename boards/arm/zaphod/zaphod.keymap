@@ -53,6 +53,14 @@
             tapping-term-ms = <200>;
             bindings = <&lt BLU_L BKSP>, <&kp BKSP>;
         };
+        
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt NUM_L SPACE>, <&kp SPACE>;
+        };
     };
 
     keymap {
@@ -64,7 +72,7 @@
                 &kp Q       &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I       &kp O      &kp P
                 &hm LCTRL A &hm LSHFT S &hm LCTRL D &hm LALT F    &kp G         &kp H            &hm LALT J   &hm LCTRL K   &hm LSFT L &hm RCTRL QUOT
                 &hm LSHFT Z &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &kp COMMA   &kp DOT    &hm RSHFT FSLH
-                                                   &lt I3L_L TAB  &lt VIM_L RET &lt NUM_L SPACE  &td0
+                                                   &lt I3L_L TAB  &lt VIM_L RET &td1             &td0
             >;
         };
 
@@ -74,7 +82,7 @@
                 &kp EXCL  &kp AT    &kp POUND  &kp DLLR       &kp PRCNT   &kp CARET       &kp AMPS      &kp ASTRK  &kp LPAR  &kp RPAR
                 &kp N1    &kp N2    &kp N3     &kp N4         &kp N5      &kp N6          &kp N7        &kp N8     &kp N9    &kp N0 
                 &kp LGUI  &kp LALT  &kp SQT    &kp MINUS      &none       &none           &kp DOT       &kp COMMA  &kp DOT   &kp FSLH
-                                               &kp BKSP       &kp DOT	  &trans          &kp BKSP
+                                               &kp BKSP       &kp SPACE	  &trans          &kp BKSP
             >;
         };
 
