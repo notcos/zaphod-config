@@ -136,7 +136,7 @@
         FUN_layer {
             label = "Fun";
             bindings = <
-           &kp LC(LALT(F1)) &kp LC(LALT(F2)) &kp LC(LALT(F3)) &kp LC(LALT(F4)) &kp LC(LALT(F5)) &kp LC(LALT(F6)) &kp LC(LALT(F7)) &none &none &none
+           &kp LC(LA(F1)) &kp LC(LA(F2)) &kp LC(LA(F3)) &kp LC(LA(F4)) &kp LC(LA(F5)) &kp LC(LA(F6)) &kp LC(LA(F7)) &none &none &none
            &kp F1           &kp F2           &kp F3           &kp F4           &kp F5           &kp F6           &kp F7 &kp F8    &kp F9 &kp F10
            &none            &none            &none            &none            &none            &none            &none  &none     &kp F11 &kp F12
                                                   &trans       &none        &none     &trans
